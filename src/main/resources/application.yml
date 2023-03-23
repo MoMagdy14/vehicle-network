@@ -1,6 +1,8 @@
+POSTGRES_URL: jdbc:postgresql://localhost:5432/vehicle_network
+
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/vehicle_network
+    url: ${POSTGRES_URL}
     username: root
     password: root
     driver-class-name: org.postgresql.Driver

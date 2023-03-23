@@ -3,9 +3,9 @@ version: '3.9'
 services:
   app:
     container_name: vehicle-network
-    image: vehicle-network:latest
+    image: vehicle-network:1
     environment:
-      MONGODB_URI: mongodb://user:password@mongo:27017/product-db
+      POSTGRES_URL: jdbc:postgresql://postgres:5432/vehicle_network
     ports:
       - "8080:8080"
     networks:
