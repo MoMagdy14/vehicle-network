@@ -3,7 +3,7 @@ version: '3.9'
 services:
   app:
     container_name: vehicle-network
-    image: momagdy/vehicle-network
+    image: momagdy/vehicle-network:1
     environment:
       POSTGRES_URL: jdbc:postgresql://postgres:5432/vehicle_network
     ports:
