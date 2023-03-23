@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: vehicle-network
+    image: vehicle-network:latest
+    environment:
+      MONGODB_URI: mongodb://user:password@mongo:27017/product-db
+    ports:
+      - "8080:8080"
+    networks:
+      app_network:
+  postgres:
+    image: postgres:10.4
+    container_name: postgres
+    hostname: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./.data/db:/var/lib/postgres/data"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: vehicle_network
+    networks:
+      app_network:
+networks:
+  app_network:
+volumes:
+  db_data:
